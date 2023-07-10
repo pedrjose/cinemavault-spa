@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Home = styled.section`
+export const HomeSection1 = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,7 +12,7 @@ export const Home = styled.section`
   font-family: "Inter", sans-serif;
 
   img {
-    height: 25%;
+    height: 10rem;
   }
 
   span {
@@ -36,6 +36,48 @@ export const Home = styled.section`
         box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
           rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
       }
+    }
+  }
+`;
+
+export const HomeSection2 = styled.section`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #4a7a96;
+  flex-direction: column;
+  gap: 1rem;
+  color: white;
+  font-family: "Inter", sans-serif;
+
+  img {
+    height: 20rem;
+  }
+`;
+
+export const HomeSection3 = styled.section`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #333f58;
+  flex-direction: column;
+  gap: 1rem;
+  color: white;
+  font-family: "Inter", sans-serif;
+
+  img {
+    height: 10rem;
+  }
+
+  span {
+    flex-direction: row;
+  }
+
+  img {
+    &:hover {
+      opacity: 0.5;
     }
   }
 `;

@@ -1,0 +1,10 @@
+.button-box {
+    display: flex;
+    gap: 1rem;
+    margin-right: 2rem;
+
+}
+
+.logo-box {
+    margin-left: 2rem;
+}
