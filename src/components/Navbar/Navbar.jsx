@@ -8,11 +8,11 @@ import UserIcon from "../../assets/img/UserIcon.png";
 import { GenreModal } from "./Modal/GenreModal/GenreModal";
 import { SettingsModal } from "../Navbar/Modal/SettingsModal/SettingsModal";
 import { AccountModal } from "./Modal/AccountModal/AccountModal";
+import { Link } from "react-router-dom";
 
 export function Navbar() {
   const [genreModal, setGenreModal] = useState(1);
   const [settingsModal, setSettingsModal] = useState(1);
-  const [session, setSession] = useState(false);
 
   const openGenreModal = () => {
     if (settingsModal % 2 === 0) {
@@ -33,11 +33,13 @@ export function Navbar() {
   return (
     <>
       <Nav>
-        <h1 className="logo-box">
-          <img src={LogoBar} alt="Cinemavault Logo" />
-        </h1>
+        <Link to="/">
+          <h1 className="logo-box">
+            <img src={LogoBar} alt="Cinemavault Logo" />
+          </h1>
+        </Link>
         <div className="button-box">
-          {session ? (
+          {localStorage.getItem("session") === "true" ? (
             <button onClick={() => openGenreModal()}>
               <img src={Hamburguer} />
             </button>
@@ -49,8 +51,14 @@ export function Navbar() {
       </Nav>
       <JustifySpace>
         {genreModal % 2 === 0 ? <GenreModal /> : null}
-        {settingsModal % 2 === 0 && session ? <SettingsModal /> : null}
-        {settingsModal % 2 === 0 && !session ? <AccountModal /> : null}
+        {settingsModal % 2 === 0 &&
+        localStorage.getItem("session") === "true" ? (
+          <SettingsModal />
+        ) : null}
+        {settingsModal % 2 === 0 &&
+        localStorage.getItem("session") === "false" ? (
+          <AccountModal />
+        ) : null}
       </JustifySpace>
     </>
   );

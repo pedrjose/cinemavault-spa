@@ -1,13 +1,15 @@
 import { Navbar } from "../../components/Navbar/Navbar";
 import { HomeSection1, HomeSection2, HomeSection3 } from "./HomepageSCSS";
 import "./Homepage.css";
-
+import { useNavigate } from "react-router-dom";
 import cinema from "../../assets/img/cinema.png";
 import NotebookIcon from "../../assets/img/NotebookIcon.png";
 import github from "../../assets/img/github.png";
 import doc from "../../assets/img/doc.png";
 
 export function Homepage() {
+  const navigate = useNavigate();
+
   return (
     <>
       <Navbar />
@@ -16,8 +18,12 @@ export function Homepage() {
         <h1>Easy, Free & Open Source</h1>
         <p>A collection of movies available in public domain</p>
         <span>
-          <button className="sign-in">Sign In</button>
-          <button className="sign-up">Sign Up</button>
+          <button className="sign-in" onClick={() => navigate("/login")}>
+            Sign In
+          </button>
+          <button className="sign-up" onClick={() => navigate("/signup")}>
+            Sign Up
+          </button>
         </span>
       </HomeSection1>
       <HomeSection2>

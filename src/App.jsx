@@ -1,14 +1,26 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Homepage } from "./pages/Homepage/Homepage";
-import { SettingsModal } from "./components/Navbar/Modal/SettingsModal/SettingsModal";
+import { LoggedHome } from "./pages/LoggedHome/LoggedHome";
+import { Login } from "./pages/Login/login";
+import { SignUp } from "./pages/SignUp/SignUp";
 
 function App() {
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Homepage />}></Route>
-          <Route path="/teste" element={<SettingsModal/>}></Route>
+          <Route
+            path="/"
+            element={
+              localStorage.getItem("session") === "true" ? (
+                <LoggedHome />
+              ) : (
+                <Homepage />
+              )
+            }
+          ></Route>
+          <Route path="/login" element={<Login />}></Route>
+          <Route path="/signup" element={<SignUp />}></Route>
           <Route path="/*" element={<p>Route Not Found</p>}></Route>
         </Routes>
       </BrowserRouter>
