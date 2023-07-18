@@ -29,7 +29,7 @@ export const Login = () => {
     }
 
     localStorage.setItem("token", sessionData.token.token);
-    localStorage.setItem("session", sessionData.promise);
+    localStorage.setItem("session", "true");
     navigate("/");
   };
 

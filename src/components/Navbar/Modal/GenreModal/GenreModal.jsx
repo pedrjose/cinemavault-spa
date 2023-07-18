@@ -4,7 +4,7 @@ export const GenreModal = () => {
   return (
     <>
       <Genres>
-        <button>Action</button>
+        <button>Adventure</button>
         <button>Animation</button>
         <button>Biography</button>
         <button>Comedy</button>

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Account = styled.div`
-  z-index: 3;
+  z-index: 1000;
   margin-top: 5.5rem;
   width: 10rem;
   height: 15rem;

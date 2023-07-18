@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Genres = styled.div`
-  z-index: 3;
+  z-index: 1000;
   margin-top: 5.5rem;
   width: 15rem;
   height: 25rem;

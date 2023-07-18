@@ -6,10 +6,18 @@ import cinema from "../../assets/img/cinema.png";
 import NotebookIcon from "../../assets/img/NotebookIcon.png";
 import github from "../../assets/img/github.png";
 import doc from "../../assets/img/doc.png";
+import { useEffect } from "react";
 
 export function Homepage() {
   const navigate = useNavigate();
 
+  useEffect(() => {
+    if (localStorage.getItem("session") === "true") {
+      window.location.reload();
+    } else {
+      localStorage.setItem("session", "false");
+    }
+  }, []);
   return (
     <>
       <Navbar />
