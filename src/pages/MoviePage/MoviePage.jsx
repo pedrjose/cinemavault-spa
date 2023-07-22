@@ -27,8 +27,10 @@ export const MoviePage = () => {
 
     if (!find.promise) {
       setPromiseError(find);
+      document.title = `Error 404`;
     } else {
       setMovie(find);
+      document.title = `${find.response.name} | Watch on Cinemavault`;
     }
   };
 
@@ -39,8 +41,7 @@ export const MoviePage = () => {
     <>
       <Navbar />
       <MovieSection>
-        <div className="space-between">
-          {" "}
+        <div className="space-between-mp">
           {movie.promise ? <h2>{movie.response.name}</h2> : null}
           {movie.promise ? (
             <img src={movie.response.banner} alt="Movie Banner Image" />

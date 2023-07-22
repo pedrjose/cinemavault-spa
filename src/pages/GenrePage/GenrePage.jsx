@@ -38,6 +38,7 @@ export const GenrePage = () => {
 
   useEffect(() => {
     searchByGenre();
+    document.title = `Search for '${genre}' movies and series available | Cinemavault`;
   }, []);
 
   return (

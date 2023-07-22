@@ -2,7 +2,7 @@ import { Navbar } from "../../components/Navbar/Navbar";
 import { useForm } from "react-hook-form";
 import { SignUpSection } from "./SignUpSCSS";
 import "./SignUp.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { initAccount } from "../../services/signup.service";
 import { useNavigate } from "react-router-dom";
 import { sendEmail, verifyEmail } from "../../services/verify.service";
@@ -63,6 +63,10 @@ export const SignUp = () => {
       setVerifyErrors(true);
     }
   };
+
+  useEffect(() => {
+    document.title = "Cinemavault";
+  }, []);
 
   return (
     <>

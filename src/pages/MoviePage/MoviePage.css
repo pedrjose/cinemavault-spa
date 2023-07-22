@@ -84,8 +84,9 @@
   }
 }
 
-.space-between {
-  margin-top: 5.5rem;
+.space-between-mp {
+  padding-top: 5.5rem;
+  margin-bottom: 5.5rem;
   display: flex;
   align-items: center;
   justify-content: center;

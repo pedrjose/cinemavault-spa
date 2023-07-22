@@ -58,6 +58,10 @@ export const LoggedHome = () => {
       window.location.reload();
     }
   }, []);
+
+  useEffect(() => {
+    document.title = "Movies and Series - Free and ad-free | Cinemavault";
+  }, []);
   return (
     <>
       <Navbar />

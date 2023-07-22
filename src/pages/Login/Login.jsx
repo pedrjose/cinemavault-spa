@@ -1,7 +1,7 @@
 import { Navbar } from "../../components/Navbar/Navbar";
 import { LoginSection } from "./LoginSCSS";
 import { initSession } from "../../services/login.service";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
@@ -37,6 +37,10 @@ export const Login = () => {
     const { email, password } = getValues();
     onSession({ email, password });
   };
+
+  useEffect(() => {
+    document.title = "Cinemavault";
+  }, []);
 
   return (
     <>

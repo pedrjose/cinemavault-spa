@@ -18,6 +18,10 @@ export function Homepage() {
       localStorage.setItem("session", "false");
     }
   }, []);
+
+  useEffect(() => {
+    document.title = "Cinemavault - Watch Movies and Series Online for Free";
+  }, []);
   return (
     <>
       <Navbar />

@@ -13,7 +13,7 @@ export const MovieSection = styled.section`
   overflow: auto;
 
   h2 {
-    margin-top: 5rem;
+    margin-top: 10rem;
   }
 
   img {
