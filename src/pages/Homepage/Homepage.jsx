@@ -42,11 +42,12 @@ export function Homepage() {
       <HomeSection3>
         <h1>Open Source Space</h1>
         <span>
-          <a href="" target="_blank" className="github">
+          <a
+            href="https://github.com/pedrjose/cinemavault"
+            target="_blank"
+            className="github"
+          >
             <img src={github} />
-          </a>
-          <a href="" target="_blank" className="doc">
-            <img src={doc} />
           </a>
         </span>
         <h6>Copyright © 2023 @pedrlimadev</h6>

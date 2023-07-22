@@ -61,7 +61,7 @@ export const Login = () => {
           </label>
           <button type="submit">Sign In</button>
         </form>
-        {!promiseSolved ? <p>{promiseError}</p> : null}
+        {!promiseSolved && !solvingPromise ? <p>{promiseError}</p> : null}
         {solvingPromise ? (
           <div className="lds-ellipsis">
             <div></div>

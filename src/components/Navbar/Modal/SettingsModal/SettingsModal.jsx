@@ -7,6 +7,7 @@ export const SettingsModal = () => {
   const logOut = () => {
     localStorage.removeItem("token");
     localStorage.setItem("session", "false");
+    navigate("/");
     window.location.reload();
   };
   return (

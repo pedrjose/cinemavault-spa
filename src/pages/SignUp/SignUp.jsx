@@ -11,6 +11,7 @@ export const SignUp = () => {
   const navigate = useNavigate();
 
   const [solvingPromise, setSolvingPromise] = useState(false);
+  const [solvingSecondPromise, setSolvingSecondPromise] = useState(false);
   const [solvedPromise, setSolvedPromise] = useState(true);
   const [promiseError, setPromiseError] = useState("");
 
@@ -52,10 +53,13 @@ export const SignUp = () => {
   const onVerify = async () => {
     const { verify } = getValues();
 
+    setSolvingSecondPromise(true);
     if (verify === verifyEmailCode) {
       await verifyEmail(userEmail);
+      setSolvingSecondPromise(false);
       navigate("/login");
     } else {
+      setSolvingSecondPromise(false);
       setVerifyErrors(true);
     }
   };
@@ -100,15 +104,33 @@ export const SignUp = () => {
             <button>Verify & Go to Sign In</button>
           </form>
         ) : null}
-        {!solvedPromise && promiseError === "Submit all required fields!" ? (
+        {!solvedPromise &&
+        !solvingPromise &&
+        promiseError === "Submit all required fields!" ? (
           <p>{promiseError}</p>
         ) : null}
-        {!solvedPromise && promiseError !== "Submit all required fields!" ? (
+        {!solvedPromise &&
+        !solvingPromise &&
+        promiseError !== "Submit all required fields!" ? (
           <p>Email already in use. Try another!</p>
         ) : null}
-        {verifyErrors ? <p>Email verification failed. Try again!</p> : null}
+        {verifyErrors && !solvingSecondPromise ? (
+          <p>Email verification failed. Try again!</p>
+        ) : null}
         {solvingPromise ? (
           <div className="lds-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        ) : null}
+        {solvingSecondPromise ? (
+          <div className="lds-roller">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
             <div></div>
             <div></div>
             <div></div>
