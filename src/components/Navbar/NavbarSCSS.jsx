@@ -21,29 +21,6 @@ export const Nav = styled.nav`
       max-height: 3rem;
     }
   }
-
-  button {
-    padding: 0;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit;
-    color: inherit;
-    text-align: inherit;
-    text-decoration: none;
-    appearance: none;
-
-    img {
-      width: auto;
-      max-height: 2.5rem;
-
-      &:hover {
-        opacity: 0.5;
-      }
-    }
-  }
 `;
 
 export const JustifySpace = styled.span`

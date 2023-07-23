@@ -40,12 +40,12 @@ export function Navbar() {
         </Link>
         <div className="button-box">
           {localStorage.getItem("session") === "true" ? (
-            <button onClick={() => openGenreModal()}>
-              <img src={Hamburguer} />
+            <button className="mobile-button" onClick={() => openGenreModal()}>
+              <img className="mobile-img" src={Hamburguer} />
             </button>
           ) : null}
-          <button onClick={() => openSettingsModal()}>
-            <img src={UserIcon} />
+          <button className="mobile-button" onClick={() => openSettingsModal()}>
+            <img className="mobile-img" src={UserIcon} />
           </button>
         </div>
       </Nav>
