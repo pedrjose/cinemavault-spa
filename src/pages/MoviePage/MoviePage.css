@@ -84,6 +84,21 @@
   }
 }
 
+.title-mp {
+  margin-top: 10rem;
+  width: auto;
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
+
+.banner-mp {
+  max-height: 15rem;
+  max-width: 27rem;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+}
+
 .space-between-mp {
   padding-top: 5.5rem;
   margin-bottom: 5.5rem;
@@ -92,4 +107,24 @@
   justify-content: center;
   flex-direction: column;
   gap: 1rem;
+}
+
+.p-mp {
+  max-width: 27rem;
+}
+
+@media screen and (width < 570px) {
+  .title-mp {
+    font-size: 15px;
+  }
+
+  .banner-mp {
+    max-height: 10rem;
+    max-width: 20rem;
+  }
+
+  .p-mp {
+    max-width: 20rem;
+    font-size: 13px;
+  }
 }

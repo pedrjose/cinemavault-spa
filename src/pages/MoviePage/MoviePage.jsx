@@ -42,12 +42,18 @@ export const MoviePage = () => {
       <Navbar />
       <MovieSection>
         <div className="space-between-mp">
-          {movie.promise ? <h2>{movie.response.name}</h2> : null}
           {movie.promise ? (
-            <img src={movie.response.banner} alt="Movie Banner Image" />
+            <h2 className="title-mp">{movie.response.name}</h2>
           ) : null}
           {movie.promise ? (
-            <p>
+            <img
+              className="banner-mp"
+              src={movie.response.banner}
+              alt="Movie Banner Image"
+            />
+          ) : null}
+          {movie.promise ? (
+            <p className="p-mp">
               {movie.response.sinopse} - <b>{movie.response.year}</b>
             </p>
           ) : null}

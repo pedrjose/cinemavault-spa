@@ -66,7 +66,7 @@ export const LoggedHome = () => {
     <>
       <Navbar />
       <UserHomePage1>
-        <h2 className="title-style">Cinemavault Top Trending 🔥</h2>
+        <h2 className="title-style">Top Trending 🔥</h2>
         <div className="container">
           {index > 0 ? (
             <button
@@ -77,7 +77,11 @@ export const LoggedHome = () => {
             </button>
           ) : null}
           <Link to={linkRoute}>
-            <img src={trendingContent[index].banner} alt="Movie Banner" />
+            <img
+              src={trendingContent[index].banner}
+              alt="Movie Banner"
+              className="img-banner"
+            />
           </Link>
 
           {index < trendingContent.length - 1 ? (
