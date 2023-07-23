@@ -16,7 +16,6 @@ export const MovieSection = styled.section`
     img {
       max-width: 3rem;
       border-radius: 15px;
-      padding-bottom: 5.5rem;
       &:hover {
         box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
           rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,

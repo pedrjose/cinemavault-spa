@@ -62,8 +62,10 @@ export const MoviePage = () => {
               <img src={play} alt="Play Movie Icon" />
             </a>
           ) : null}
-          {promiseError.notFound ? <p>{promiseError.message}</p> : null}
-          {promiseError.notFound ? (
+          {promiseError.notFound && !solvingPromise ? (
+            <p>Movie not found or Session Expired!</p>
+          ) : null}
+          {promiseError.notFound && !solvingPromise ? (
             <img src={error404} alt="Error Image" />
           ) : null}
           {solvingPromise ? (
