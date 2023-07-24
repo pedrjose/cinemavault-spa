@@ -12,10 +12,13 @@ export function Homepage() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    if (localStorage.length === 0) {
+      localStorage.setItem("session", "false");
+      window.location.reload();
+    }
+
     if (localStorage.getItem("session") === "true") {
       window.location.reload();
-    } else {
-      localStorage.setItem("session", "false");
     }
   }, []);
 
